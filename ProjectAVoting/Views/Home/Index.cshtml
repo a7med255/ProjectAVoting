@@ -1,0 +1,57 @@
+﻿@model ProjectAVoting.Controllers.HomeController.VotePersonViewModel
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Voting</h4>
+            <p class="card-description">Vote here </p>
+            <form class="forms-sample" method="post" enctype="multipart/form-data"
+                  asp-controller="Home" asp-action="Index" role="form">
+                <input asp-for="NewPerson.Id" type="hidden" />
+                <input asp-for="Votes" type="hidden" />
+
+                <div class="form-group">
+                    <label for="exampleInputName1">Name</label>
+                    <input asp-for="NewPerson.Name" type="text" class="form-control" placeholder="Name">
+                    <span asp-validation-for="NewPerson.Name"></span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputJob">Job</label>
+                    <input asp-for="NewPerson.Job" type="text" class="form-control" placeholder="Job">
+                    <span asp-validation-for="NewPerson.Job"></span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleSelectYear">Year Exeriance</label>
+                    <select asp-for="NewPerson.YearExp" class="form-control" placeholder="Year Exeriance">
+                        @for (int i = 1; i <= 10; i++)
+                        {
+                            <option>@i</option>
+                        }
+                    </select>
+                    <span asp-validation-for="NewPerson.YearExp"></span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputAge">Age</label>
+                    <input asp-for="NewPerson.Age" type="text" class="form-control" placeholder="Age">
+                    <span asp-validation-for="NewPerson.Age"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="exampleTextarea1">Notes</label>
+                    <textarea asp-for="NewPerson.Notes" class="form-control" rows="3"></textarea>
+                    <span asp-validation-for="NewPerson.Notes"></span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleSelectVotes"> Select a Vote Option</label>
+                    <select asp-for="NewPerson.Votes" class="form-control" placeholder=" Select a Vote Option">
+                        @foreach (var i in Model.Votes)
+                        {
+                            <option>@i.Votes</option>
+                        }
+                    </select>
+                    <span asp-validation-for="NewPerson.Votes"></span>
+                </div>
+                <button type="submit" formmethod="post" class="btn btn-gradient-primary me-2">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
