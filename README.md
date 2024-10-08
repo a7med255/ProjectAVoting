@@ -7,6 +7,7 @@ As a backend developer, I worked on building the logic and infrastructure for th
 👤 Person management for easy record updates.
 
 ⚙️ Developed using ASP.NET Core MVC with JavaScript, HTML, CSS, jQuery, and a template for the front-end.
+
 Check out the full project on GitHub: ProjectAVoting
 
 This project was a great way to deepen my backend expertise and work on integrating systems for seamless user experience.
